@@ -3,7 +3,7 @@
 
 .container {
   min-height: 100vh;
-  padding: 20px;
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,9 +22,13 @@
   border-radius: 44px;
   background: $background;
   //margin: 20px;
-  @include tablet-small {
-    padding: 24px;
-    gap: 0;
+  @include desktop-small {
+    padding: 32px 120px 65px 120px;
+    //gap: 0;
+  }
+  @include mobile {
+    padding: 24px 24px 65px 24px;
+    //gap: 0;
   }
 }
 
@@ -32,8 +36,9 @@
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  @include desktop {
+  @include desktop-small {
     align-items: center;
+    flex-shrink: 1;
   }
   //align-content: space-between;
 }
@@ -42,21 +47,24 @@ app-auth-form {
   flex-grow: 1;
   display: grid;
   align-items: center;
-  margin: 32px 0;
+  //margin: 32px 0;
   @include desktop {
-    margin: 56px 0 63px 0;
+    //margin: 40px 0 0 0;
   }
+  
 }
 
 .auth-img {
   max-width: 768px;
-  //width: 100%;
-  @include desktop {
+  width: 100%;
+
+  @include desktop-small {
     display: none;
   }
   img {
     max-width: 100%;
-    height: auto;
+    //max-height: 896px;
+    //height: auto;
     object-fit: cover;
   }
 }
